@@ -30,7 +30,7 @@ const CursorProvider = ({ children }) => {
     } else {
       setCursorBG('none');
     }
-  });
+  }, [mobileViewportIsActive]);
 
   // cursor variants
   const cursorVariants = {
@@ -65,8 +65,7 @@ const CursorProvider = ({ children }) => {
 
   return (
     <CursorContext.Provider
-      value={{ cursorVariants, cursorBG, mouseEnterHandler, mouseLeaveHandler }}
-    >
+      value={{ cursorVariants, cursorBG, mouseEnterHandler, mouseLeaveHandler }}>
       {children}
     </CursorContext.Provider>
   );
